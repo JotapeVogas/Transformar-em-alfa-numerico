@@ -1,18 +1,21 @@
 def converter_texto(texto):
     trocas = {
-        'A': '4',
-        'B': '8', 
-        'S': '5',
-        'G': '6',
-        'Z': '2',
-        'I': '1',
-        'E': '3',
-        'T': '7',
-        'O': '0'
+        'a': '4',
+        'b': '8', 
+        's': '5',
+        'g': '6',
+        'z': '2',
+        'i': '1',
+        'e': '3',
+        't': '7',
+        'o': '0'
     }
-    
+    contador_upper = 0
     resultado = ""
-    for letra in texto.upper():
+    for letra in texto.lower():
+        if letra.isalpha() and contador_upper == 0:
+            letra = letra.upper()
+            contador_upper += 1
         if letra in trocas:
             resultado += trocas[letra]
         else:
