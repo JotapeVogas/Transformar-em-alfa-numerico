@@ -10,3 +10,6 @@ venv.bak/
 venv/
 .env/
 .venv/
+
+__pycache__/
+*.py[cod]
