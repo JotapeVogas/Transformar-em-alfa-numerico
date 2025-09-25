@@ -12,12 +12,9 @@ def converter_texto(texto):
         't': '7',
         'o': '0'
     }
-    contador_upper = 0
     resultado = ""
     for letra in texto.lower():
-        if letra.isalpha() and contador_upper == 0:
-            letra = letra.upper()
-            contador_upper += 1
+
         if letra in trocas:
             resultado += trocas[letra]
         else:
@@ -102,9 +99,7 @@ def gerador_senha_memoravel(num_palavras=4, separador="-"):
     
     palavras_selecionadas = random.sample(palavras, num_palavras)
     
-    senha_principal = separador.join(palavras_selecionadas)
-    
-    senha = senha_principal
+    senha = separador.join(palavras_selecionadas)
     
     return senha.capitalize()
 
