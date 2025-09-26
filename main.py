@@ -58,9 +58,13 @@ def testar_lista_palavras():
 
 def converter_texto(texto):
     global trocas, letras_trocas, palavras
+    contador_caracteres = 0
     resultado = ""
     for letra in texto.lower():
-        if letra in trocas:
+        if contador_caracteres == 0:
+            resultado += letra.upper()
+            contador_caracteres += 1
+        elif letra in trocas:
             resultado += trocas[letra]
         else:
             resultado += letra
@@ -74,7 +78,7 @@ def gerador_senha_memoravel(num_palavras=4, separador="-"):
     
     senha = separador.join(palavras_selecionadas)
     
-    return senha.capitalize()
+    return senha
 
 if __name__ == "__main__":
     testar_lista_palavras()
